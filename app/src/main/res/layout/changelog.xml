@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:fillViewport="true"
+    android:scrollbars="none">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#2398F8"
+        android:weightSum="2"
+        android:orientation="vertical">
+        <ImageView
+            android:id="@+id/iv"
+            android:layout_width="125dp"
+            android:layout_height="125dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="80dp"
+            android:src="@mipmap/modern_logo_image" />
+
+        <TextView
+            android:id="@+id/tv_version"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:layout_marginBottom="20dp"
+            android:text="当前版本: Modern_3.12 B604"
+
+            android:textColor="#e2f1ff"
+            android:textSize="15sp" />
+        <EditText
+            android:id="@+id/tv_change_log"
+            android:paddingTop="25dp"
+            android:paddingLeft="25dp"
+            android:background="#ffffff"
+            android:layout_width="match_parent"
+            android:textSize="14dp"
+            android:minLines="8"
+            android:gravity="left"
+            android:inputType="textMultiLine"
+            android:enabled="false"
+            android:lineSpacingExtra="8dp"
+            android:textColor="#6e6d6d"
+            android:layout_height="match_parent"
+          />
+ </LinearLayout>
+
+
+
+
+
+</ScrollView>
+
+

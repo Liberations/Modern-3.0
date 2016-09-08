@@ -1,0 +1,23 @@
+<resources>
+
+    <string name="app_name">关于手机</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="system">系统</string>
+    <string name="device_name">手机名称</string>
+    <string name="Status">状态信息</string>
+    <string name="phone_info_etc">电话号码、信号等</string>
+    <string name="model_number">型号：</string>
+    <string name="storage_memory">存储容量：</string>
+    <string name="ram_devicememory">运行内存：</string>
+    <string name="buid_version">固件版本号：</string>
+    <string name="security_patch">Android安全补丁程序级别：</string>
+    <string name="android_version">安卓版本：</string>
+    <string name="kernel_version">内核版本:</string>
+    <string name="firmware_version">基带版本：</string>
+    <string name="about_settings">关于手机</string>
+    <string name="legal_information">法律信息</string>
+    <string name="regulatory_information">认证信息</string>
+    <string name="about_modern">关于Modern</string>
+    <string name="update_log">更新日志</string>
+</resources>
