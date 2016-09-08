@@ -314,13 +314,13 @@
                 android:icon="@drawable/ic_settings_development"
                 />
 
-        <!-- About Device -->
-        <dashboard-tile
-                android:id="@+id/about_settings"
-                android:title="@string/about_settings"
-                android:fragment="com.android.settings.DeviceInfoSettings"
-                android:icon="@drawable/ic_settings_about"
-                />
+        <!-- About Device for Modern -->
+        <dashboard-tile android:icon="@drawable/ic_settings_about" android:id="@id/about_settings" android:title="@string/about_settings" >
+		   <intent  android:action="android.intent.action.MAIN"
+               android:targetPackage="com.android.wenxiangli.modern"
+               android:targetClass="com.android.wenxiangli.modern.MainActivity"/>
+       </dashboard-tile>
+
 
     </dashboard-category>
 
