@@ -316,9 +316,9 @@
 
         <!-- About Device for Modern -->
         <dashboard-tile android:icon="@drawable/ic_settings_about" android:id="@id/about_settings" android:title="@string/about_settings" >
-		   <intent  android:action="android.intent.action.MAIN"
-               android:targetPackage="com.android.wenxiangli.modern"
-               android:targetClass="com.android.wenxiangli.modern.MainActivity"/>
+	       <intent  android:action="android.intent.action.MAIN"
+                  android:targetPackage="com.android.wenxiangli.modern"
+                  android:targetClass="com.android.wenxiangli.modern.MainActivity"/>
        </dashboard-tile>
 
 
