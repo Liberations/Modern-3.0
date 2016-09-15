@@ -1,9 +1,12 @@
 package com.android.wenxiangli.modern;
 
 import android.app.ActivityManager;
+import android.app.AlertDialog;
 import android.content.ComponentName;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -15,9 +18,12 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.text.format.Formatter;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewConfiguration;
+import android.view.Window;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -121,7 +127,7 @@ public class MainActivity extends ActionBarActivity {
     }
 
     private void getData() {
-        product = getProuduct();
+        readShared();
         model = getModel();
         storage = getStorage();
         ram = getRam();
@@ -130,6 +136,23 @@ public class MainActivity extends ActionBarActivity {
         androidversion = getVersion();
         kernel_version = getKernelVersion();
         firmware_version = getBaseBand();
+    }
+
+    private void readShared() {
+        SharedPreferences shared = getSharedPreferences("firstRun",
+                MODE_PRIVATE);
+        SharedPreferences.Editor editor = shared.edit();
+        boolean isFirst = shared.getBoolean("isFirst", true);
+        if (isFirst) {
+            product = getProuduct();
+            editor.putBoolean("isFirst", false);
+            editor.putString("device_name",getProuduct());
+            // commit
+            editor.commit();
+
+        } else {
+           product = shared.getString("device_name",getProuduct());
+        }
     }
 
     private String getVersion() {
@@ -322,6 +345,44 @@ public class MainActivity extends ActionBarActivity {
         // 1.获取sharedprefs对象实例
         EditText text = (EditText) view;
         text.setText(((TextView) view).getText().toString());
+
+    }
+    AlertDialog dialog ;
+    public void ed_name(View view) {
+        LayoutInflater inflater = LayoutInflater.from(this);
+        View view1 = inflater.inflate(R.layout.editname, null);
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setView(view1);
+        builder.create();
+        final EditText et_name = (EditText) view1.findViewById(R.id.et_name);
+        et_name.setText(tv_product.getText().toString());
+        Button btn_confirm = (Button) view1.findViewById(R.id.btn_confirm);
+        Button btn_neg = (Button) view1.findViewById(R.id.btn_neg);
+        btn_confirm.setOnClickListener(new android.view.View.OnClickListener(){
+
+            @Override public void onClick(View v) {
+                Log.i("测试", "对话框中的Button被点击了");
+                tv_product.setText(et_name.getText().toString());
+                SharedPreferences shared = getSharedPreferences("firstRun",
+                        MODE_PRIVATE);
+                SharedPreferences.Editor editor = shared.edit();
+                editor.putString("device_name",et_name.getText().toString());
+                editor.commit();
+                dialog.dismiss();
+
+            }
+        });
+        btn_neg.setOnClickListener(new android.view.View.OnClickListener(){
+
+            @Override public void onClick(View v) {
+                Log.i("测试", "对话框中的Button被点击了");
+                dialog.dismiss();
+            }
+        });
+
+        dialog = builder.create();
+        dialog.show();
+
 
     }
 }
