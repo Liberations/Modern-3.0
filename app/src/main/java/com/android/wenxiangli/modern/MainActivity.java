@@ -9,6 +9,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.StatFs;
+import android.os.SystemClock;
 import android.support.v4.view.WindowCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
@@ -18,6 +19,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewConfiguration;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -37,6 +39,7 @@ public class MainActivity extends ActionBarActivity {
             tv_usb_debug, tv_android_version;
     String product, model, storage, ram, build_version, androidversion,
             kernel_version, firmware_version;
+    LinearLayout m_system,m_info,m_log,m_about,user_debug;
     public static int flag = 0;
 
 
@@ -66,7 +69,7 @@ public class MainActivity extends ActionBarActivity {
         } catch (Exception ex) {
             // Ignore
         }
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.modernlayout);
         if (Build.VERSION.SDK_INT >= 21) {
             getSupportActionBar().setElevation(0);
         }
@@ -75,34 +78,35 @@ public class MainActivity extends ActionBarActivity {
         setData();
         setListen();
     }
-
+    private long startClickTime;
     private void setListen() {
-        tv_usb_debug.setOnClickListener(new View.OnClickListener() {
+
+        user_debug.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "咦，终于被你发现了~",
-                        Toast.LENGTH_SHORT).show();
-                Intent mIntent = new Intent("android.intent.action.MAIN");
-                ComponentName comp = new ComponentName("com.android.settings",
-                        "com.android.settings.DevelopmentSettings");
-                mIntent.setComponent(comp);
-                mIntent.addCategory("android.intent.category.LAUNCHER");
-                startActivity(mIntent);// 启动
+                Toast.makeText(MainActivity.this, "双击进入开发者选项", Toast.LENGTH_SHORT).show();
+                long nextClickTime = SystemClock.uptimeMillis();
+                if (startClickTime <= 0) {
+                    startClickTime = SystemClock.uptimeMillis();
+                    return ;
+                }else {
+                    if (nextClickTime - startClickTime < 200) {
+                        Intent mIntent = new Intent("android.intent.action.MAIN");
+                        ComponentName comp = new ComponentName("com.android.settings",
+                                "com.android.settings.DevelopmentSettings");
+                        mIntent.setComponent(comp);
+                        mIntent.addCategory("android.intent.category.LAUNCHER");
+                        startActivity(mIntent);// 启动
+                        startClickTime = 0L;
+                    } else {
+                        startClickTime = SystemClock.uptimeMillis();
+                    }
+
+                }
+
             }
         });
-        tv_android_version.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "咦，终于被你发现了~",
-                        Toast.LENGTH_SHORT).show();
-                Intent mIntent = new Intent("android.intent.action.MAIN");
-                ComponentName comp = new ComponentName("com.android.settings",
-                        "com.android.settings.DevelopmentSettings");
-                mIntent.setComponent(comp);
-                mIntent.addCategory("android.intent.category.LAUNCHER");
-                startActivity(mIntent);// 启动
-            }
-        });
+
     }
 
     private void setData() {
@@ -158,6 +162,11 @@ public class MainActivity extends ActionBarActivity {
         tv_firmware_version = (TextView) findViewById(R.id.tv_firmware_version);
         tv_usb_debug = (TextView) findViewById(R.id.usb_debug);
         tv_android_version = (TextView) findViewById(R.id.tv_android_version);
+        user_debug = (LinearLayout) findViewById(R.id.user_debug);
+        m_system = (LinearLayout) findViewById(R.id.m_system);
+        m_info = (LinearLayout) findViewById(R.id.m_info);
+        m_log = (LinearLayout) findViewById(R.id.m_log);
+        m_about = (LinearLayout) findViewById(R.id.m_about);
     }
 
     public void Status(View view) {
