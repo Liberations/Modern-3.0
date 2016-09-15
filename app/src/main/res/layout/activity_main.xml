@@ -1,340 +1,382 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FAFAFA"
+    android:background="#F5F5F5"
     android:fillViewport="true"
-    android:scrollbars="none"
-    tools:context="com.android.wenxiangli.modern.MainActivity">
+    android:scrollbars="none">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-
+        android:layout_height="match_parent"
         android:orientation="vertical">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="15dp"
-            android:gravity="center_horizontal|left"
-            android:text="@string/system"
-
-            android:textColor="#1E99F3"
-            android:textSize="14sp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="15dp"
-            android:gravity="center|left"
-            android:text="@string/device_name"
-            android:textColor="#151515"
-            android:textSize="16sp" />
-
-        <TextView
-            android:id="@+id/tv_device_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="5dp"
-            android:gravity="center|left"
-            android:textColor="#797979"
-            android:textSize="15sp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="10dp"
-            android:background="#ECECEC" />
-
-        <TextView
-            android:id="@+id/tv_device_statu1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="15dp"
-            android:clickable="true"
-            android:gravity="center|left"
-            android:onClick="Status"
-            android:text="@string/Status"
-            android:textColor="#151515"
-            android:textSize="16sp" />
-
-        <TextView
-            android:id="@+id/tv_device_statu2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:clickable="true"
-            android:gravity="center|left"
-            android:onClick="Status"
-            android:text="@string/phone_info_etc"
-            android:textColor="#797979"
-            android:textSize="15sp" />
-
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="15dp"
-            android:background="#ECECEC" />
-
-        <TextView
-            android:id="@+id/tv_change_log"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="15dp"
-            android:clickable="true"
-            android:gravity="center|left"
-            android:onClick="getChanglog"
-            android:text="@string/update_log"
-            android:textColor="#151515"
-            android:textSize="16sp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="15dp"
-            android:background="#ECECEC" />
-
-        <TextView
-            android:id="@+id/tv_about_modern"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="15dp"
-            android:clickable="true"
-            android:gravity="center|left"
-            android:onClick="getAboutModern"
-            android:text="@string/about_modern"
-            android:textColor="#151515"
-            android:textSize="16sp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="15dp"
-            android:background="#ECECEC" />
-
-        <TextView
-            android:layout_width="383dp"
-            android:layout_height="10dp"
-            android:background="#F5F5F5" />
-
+        <!--系统-->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="15dp"
-                android:gravity="center|left"
-
-                android:text="@string/model_number"
-                android:textColor="#797979"
-                android:textSize="15sp" />
-
-            <TextView
-                android:id="@+id/tv_model"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="15dp"
-                android:gravity="left|center"
-                android:textColor="#797979"
-
-                android:textSize="15sp" />
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="15dp"
-                android:gravity="center|left"
-
-                android:text="@string/storage_memory"
-                android:textColor="#797979"
-                android:textSize="15sp" />
-
-            <TextView
-                android:id="@+id/tv_storage_memory"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="15dp"
-                android:gravity="left|center"
-                android:textColor="#797979"
-                android:textSize="15sp" />
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="15dp"
-                android:gravity="center|left"
-
-                android:text="@string/ram_devicememory"
-                android:textColor="#797979"
-                android:textSize="15sp" />
-
-            <TextView
-                android:id="@+id/tv_ram_memory"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="15dp"
-                android:gravity="left|center"
-                android:textColor="#797979"
-                android:textSize="15sp" />
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="15dp"
-                android:gravity="center|left"
-
-                android:text="@string/buid_version"
-                android:textColor="#797979"
-                android:textSize="15sp" />
-
-            <TextView
-                android:id="@+id/tv_build_version"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="15dp"
-                android:gravity="left|center"
-                android:textColor="#797979"
-                android:textSize="15sp" />
-
-
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/usb_debug"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="15dp"
+            <!--手机名称-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
                 android:clickable="true"
-                android:gravity="center|left"
-                android:text="@string/android_version"
-                android:textColor="#797979"
-                android:textSize="15sp" />
+                android:paddingLeft="15dp"
+                android:background="@drawable/ripple_bg"
+                android:orientation="vertical"
+                android:id="@+id/m_system">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:layout_marginTop="15dp"
+                    android:text="@string/system"
+                    android:textColor="#1E99F3"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:layout_marginTop="15dp"
+                    android:gravity="center|left"
+                    android:text="@string/device_name"
+                    android:textColor="#151515"
+                    android:textSize="16sp" />
+                <TextView
+                    android:id="@+id/tv_device_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center|left"
+                    android:textColor="#797979"
+                    android:textSize="15sp" />
+            </LinearLayout>
 
             <TextView
-                android:id="@+id/tv_android_version"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="15dp"
-                android:gravity="left|center"
-                android:textColor="#797979"
-                android:textSize="15sp" />
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#ECECEC" />
+
+            <!--状态信息-->
+            <LinearLayout
+                android:onClick="Status"
+                android:clickable="true"
+                android:paddingLeft="15dp"
+                android:background="@drawable/ripple_bg"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:id="@+id/m_info">
+
+                <TextView
+                    android:id="@+id/tv_device_statu1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center|left"
+                    android:text="@string/Status"
+                    android:textColor="#151515"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tv_device_statu2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center|left"
+                    android:text="@string/phone_info_etc"
+                    android:textColor="#797979"
+                    android:textSize="15sp" />
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#ECECEC" />
+            <!--更新日志-->
+            <LinearLayout
+                android:clickable="true"
+                android:paddingLeft="15dp"
+                android:onClick="getChanglog"
+                android:background="@drawable/ripple_bg"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:id="@+id/m_log">
+
+                <TextView
+                    android:id="@+id/tv_change_log"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center|left"
+                    android:text="@string/update_log"
+                    android:textColor="#151515"
+                    android:textSize="16sp" />
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#ECECEC" />
+            <!--关于Modern-->
+            <LinearLayout
+                android:clickable="true"
+                android:paddingLeft="15dp"
+                android:onClick="getAboutModern"
+                android:background="@drawable/ripple_bg"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:id="@+id/m_about">
+
+                <TextView
+                    android:id="@+id/tv_about_modern"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center|left"
+                    android:text="@string/about_modern"
+                    android:textColor="#151515"
+                    android:textSize="16sp" />
+            </LinearLayout>
 
 
         </LinearLayout>
 
+
+        <!--手机信息-->
         <LinearLayout
+            android:clickable="true"
+            android:background="@drawable/ripple_bg"
+            android:layout_marginTop="15dp"
+            android:paddingLeft="10dp"
+            android:id="@+id/user_debug"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <!--机型型号-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="   0.7"
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="15dp"
-                android:gravity="center|left"
+                android:orientation="horizontal">
 
-                android:text="@string/kernel_version"
-                android:textColor="#797979"
-                android:textSize="15sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:gravity="center|left"
+                    android:text="@string/model_number"
+                    android:textColor="#797979"
+                    android:textSize="15sp" />
 
-            <TextView
-                android:id="@+id/tv_kernel_version"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="15dp"
-                android:gravity="left|center"
-                android:textColor="#797979"
-                android:textSize="15sp" />
+                <TextView
+                    android:id="@+id/tv_model"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginTop="15dp"
+                    android:gravity="left|center"
+                    android:textColor="#797979"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <!--存储容量-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="   0.7"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:gravity="center|left"
+
+                    android:text="@string/storage_memory"
+                    android:textColor="#797979"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/tv_storage_memory"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginTop="15dp"
+                    android:gravity="left|center"
+                    android:textColor="#797979"
+                    android:textSize="15sp" />
+
+
+            </LinearLayout>
+
+            <!--运行内存-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="   0.7"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:gravity="center|left"
+
+                    android:text="@string/ram_devicememory"
+                    android:textColor="#797979"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/tv_ram_memory"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginTop="15dp"
+                    android:gravity="left|center"
+                    android:textColor="#797979"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+            <!--固件版本号-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="   0.7"
+
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginTop="15dp"
+                    android:gravity="center|left"
+
+                    android:text="@string/buid_version"
+                    android:textColor="#797979"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/tv_build_version"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginTop="15dp"
+                    android:gravity="left|center"
+                    android:textColor="#797979"
+                    android:textSize="15sp" />
+
+
+            </LinearLayout>
+
+            <!--安卓版本-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="   0.7"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/usb_debug"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginTop="15dp"
+                    android:clickable="true"
+                    android:gravity="center|left"
+                    android:text="@string/android_version"
+                    android:textColor="#797979"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/tv_android_version"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginTop="15dp"
+                    android:gravity="left|center"
+                    android:textColor="#797979"
+                    android:textSize="15sp" />
+
+
+            </LinearLayout>
+
+            <!--内核版本-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="   0.7"
+
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginTop="15dp"
+                    android:gravity="center|left"
+                    android:text="@string/kernel_version"
+                    android:textColor="#797979"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/tv_kernel_version"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginTop="15dp"
+                    android:gravity="left|center"
+                    android:textColor="#797979"
+                    android:textSize="15sp" />
+
+
+            </LinearLayout>
+
+            <!--基带版本-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginTop="15dp"
+                    android:gravity="center|left"
+
+                    android:text="@string/firmware_version"
+                    android:textColor="#797979"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/tv_firmware_version"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                   
+                    android:layout_marginTop="15dp"
+                    android:gravity="left|center"
+                    android:textColor="#797979"
+                    android:textSize="15sp" />
+
+
+            </LinearLayout>
 
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="15dp"
-                android:gravity="center|left"
-
-                android:text="@string/firmware_version"
-                android:textColor="#797979"
-                android:textSize="15sp" />
-
-            <TextView
-                android:id="@+id/tv_firmware_version"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="15dp"
-                android:gravity="left|center"
-                android:textColor="#797979"
-                android:textSize="15sp" />
-
-
-        </LinearLayout>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="10dp" />
     </LinearLayout>
+
 </ScrollView>
